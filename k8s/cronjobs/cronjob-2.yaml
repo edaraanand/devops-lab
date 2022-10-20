@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: helloworld-cron-2
+spec:
+  schedule: "* * * * *"
+  # Keeps the # of successful jobs history
+  successfulJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            command: ["echo", "Hi Anand - Cron Job"]
+          restartPolicy: Never

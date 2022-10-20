@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: helloworld-cron-3
+spec:
+  schedule: "* * * * *"
+  # Keeps the # of failed jobs history
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            command: ["eco", "Hi Anand - Cron Job"]
+          restartPolicy: Never

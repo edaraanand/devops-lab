@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: helloworld-cron-5
+spec:
+  schedule: "* * * * *"
+  # It does suspend the cronjob and doesn't schedule any future jobs and keeps the job history and pods history
+  suspend: true
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            command: ["eco", "Hi Anand - Cron Job"]
+          restartPolicy: Never

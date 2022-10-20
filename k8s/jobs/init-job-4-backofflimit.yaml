@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: helloworld-4
+spec:
+  backoffLimit: 5
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["slee", "60"]
+      restartPolicy: Never

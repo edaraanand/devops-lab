@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: helloworld-cron-4
+spec:
+  schedule: "* * * * *"
+  # Jobs History won't exist
+  failedJobsHistoryLimit: 0
+  successfulJobsHistoryLimit: 0
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            command: ["eco", "Hi Anand - Cron Job"]
+          restartPolicy: Never

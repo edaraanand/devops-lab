@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: helloworld-9
+spec:
+  parallelism: 3
+  backoffLimit: 5
+  activeDeadlineSeconds: 10
+  completions: 5
+  suspend: true
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["sleep", "60"]
+      restartPolicy: Never

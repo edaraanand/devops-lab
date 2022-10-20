@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: helloworld-cron-8
+spec:
+  schedule: "* * * * *"
+  # Replace the previous cronjob
+  concurrencyPolicy: Replace
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            command: ["sleep", "90"]
+          restartPolicy: Never

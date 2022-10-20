@@ -1,0 +1,25 @@
+dev:
+    - role-1
+    - role-2
+    - role-3
+    - role-4
+    - role-5
+qa:
+    - role-1
+    - role-2
+    - role-3
+    - role-4
+    - role-5
+
+perf:
+    - role-1
+    - role-2
+    - role-3
+    - role-4
+    - role-5
+prod: 
+    - role-1
+    - role-2
+    - role-3
+    - role-4
+    - role-5 
