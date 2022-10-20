@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: helloworld-7
+  name: helloworld-job-7
 spec:
   completions: 5
   template:

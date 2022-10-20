@@ -1,11 +1,11 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: helloworld-cron-3
+  name: helloworld-cronjob-7
 spec:
   schedule: "* * * * *"
-  # Keeps the # of failed jobs history
-  failedJobsHistoryLimit: 2
+  # Forbid the new cronjob to run, while previous one is running
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       template:
@@ -13,5 +13,5 @@ spec:
           containers:
           - name: busybox
             image: busybox
-            command: ["eco", "Hi Anand - Cron Job"]
+            command: ["sleep", "90"]
           restartPolicy: Never

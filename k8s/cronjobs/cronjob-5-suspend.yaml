@@ -1,11 +1,11 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: helloworld-cron-6
+  name: helloworld-cronjob-5
 spec:
   schedule: "* * * * *"
-  # Allow the new cronjob to run while previous one is running
-  concurrencyPolicy: Allow
+  # It does suspend the cronjob and doesn't schedule any future jobs and keeps the job history and pods history
+  suspend: true
   jobTemplate:
     spec:
       template:
@@ -13,5 +13,5 @@ spec:
           containers:
           - name: busybox
             image: busybox
-            command: ["sleep", "100"]
+            command: ["eco", "Hi Anand - Cron Job"]
           restartPolicy: Never

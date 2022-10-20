@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: helloworld-9
+  name: helloworld-job-9
 spec:
   parallelism: 3
   backoffLimit: 5

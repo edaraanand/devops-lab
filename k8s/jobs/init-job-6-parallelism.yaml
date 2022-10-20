@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: helloworld-6
+  name: helloworld-job-6
 spec:
   parallelism: 3
   template:

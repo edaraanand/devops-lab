@@ -1,11 +1,11 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: helloworld-cron-8
+  name: helloworld-cronjob-3
 spec:
   schedule: "* * * * *"
-  # Replace the previous cronjob
-  concurrencyPolicy: Replace
+  # Keeps the # of failed jobs history
+  failedJobsHistoryLimit: 2
   jobTemplate:
     spec:
       template:
@@ -13,5 +13,5 @@ spec:
           containers:
           - name: busybox
             image: busybox
-            command: ["sleep", "90"]
+            command: ["eco", "Hi Anand - Cron Job"]
           restartPolicy: Never

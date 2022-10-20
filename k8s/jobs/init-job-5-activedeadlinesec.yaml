@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: helloworld-5
+  name: helloworld-job-5
 spec:
   activeDeadlineSeconds: 10
   template:

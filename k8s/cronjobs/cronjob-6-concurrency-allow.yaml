@@ -1,11 +1,11 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: helloworld-cron-7
+  name: helloworld-cronjob-6
 spec:
   schedule: "* * * * *"
-  # Forbid the new cronjob to run, while previous one is running
-  concurrencyPolicy: Forbid
+  # Allow the new cronjob to run while previous one is running
+  concurrencyPolicy: Allow
   jobTemplate:
     spec:
       template:
@@ -13,5 +13,5 @@ spec:
           containers:
           - name: busybox
             image: busybox
-            command: ["sleep", "90"]
+            command: ["sleep", "100"]
           restartPolicy: Never

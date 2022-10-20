@@ -1,1 +1,1 @@
-kl delete job helloworld-3 helloworld-4 helloworld-2 helloworld-5 helloworld-6 helloworld-8 helloworld-7 helloworld-9
+kl delete job helloworld-job3 helloworld-job4 helloworld-job2 helloworld-job5 helloworld-job6 helloworld-job8 helloworld-job7 helloworld-job9
